@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>结算模块 | 设计邦后端开发文档</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.5">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchor-navigation/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-prism/prism.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../订单模块/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3"
+        data-chapter-title="结算模块"
+        data-filepath="结算模块/README.md"
+        data-basepath=".."
+        data-revision="Wed Dec 16 2015 16:16:07 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="购物车模块/index.html">
+            
+                
+                    <a href="../购物车模块/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        购物车模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="订单模块/index.html">
+            
+                
+                    <a href="../订单模块/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        订单模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3" data-path="结算模块/index.html">
+            
+                
+                    <a href="../结算模块/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        结算模块
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >设计邦后端开发文档</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x7ED3;&#x7B97;"><a name="&#x7ED3;&#x7B97;" class="plugin-anchor" href="#&#x7ED3;&#x7B97;"><span class="fa fa-link"></span></a>&#x7ED3;&#x7B97;</h1>
+<h2 id="&#x7ED3;&#x7B97;&#x8BC4;&#x4F30;"><a name="&#x7ED3;&#x7B97;&#x8BC4;&#x4F30;" class="plugin-anchor" href="#&#x7ED3;&#x7B97;&#x8BC4;&#x4F30;"><span class="fa fa-link"></span></a>&#x7ED3;&#x7B97;&#x8BC4;&#x4F30;</h2>
+<h2 id="&#x7ED3;&#x7B97;"><a name="&#x7ED3;&#x7B97;" class="plugin-anchor" href="#&#x7ED3;&#x7B97;"><span class="fa fa-link"></span></a>&#x7ED3;&#x7B97;</h2>
+<h2 id="&#x7ED3;&#x7B97;&#x6253;&#x6B3E;"><a name="&#x7ED3;&#x7B97;&#x6253;&#x6B3E;" class="plugin-anchor" href="#&#x7ED3;&#x7B97;&#x6253;&#x6B3E;"><span class="fa fa-link"></span></a>&#x7ED3;&#x7B97;&#x6253;&#x6B3E;</h2>
+<script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl&&targetUl.getElementsByTagName('a').length>0){targetUl.className='atoc';}</script> 
+
+<footer class="page-footer"><span class="copyright">&#xA9; Syousoft Team all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2015-12-16 11:22:55
+</span></footer><div id='anchors-navbar'><i class='fa fa-anchor'></i><ul><li><a href='#结算'>结算</a></li><ul><li><a href='#结算评估'>结算评估</a></li><li><a href='#结算'>结算</a></li><li><a href='#结算打款'>结算打款</a></li></ul></ul></div><a href='#结算' id='goTop'><i class='fa fa-arrow-up'></i></a>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../订单模块/index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 订单模块"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"atoc":{"addClass":true,"className":"atoc"},"tbfed-pagefooter":{"copyright":"&copy Syousoft Team","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"anchors":{},"anchor-navigation":{},"splitter":{},"prism":{},"expandable-chapters":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

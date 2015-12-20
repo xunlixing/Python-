@@ -1,0 +1,50 @@
+{
+	"name": "CSS学习笔记",
+	"version": "1.0.0",
+	"output": "/Library/WebServer/Documents/studu/css",
+	"links": {
+		"gitbook": false,
+		"sharing": {
+			"google": false,
+			"facebook": false,
+			"twitter": false,
+			"all": false
+		}
+	},
+	"plugins": [
+		"prism",
+		"atoc"
+	],
+	"dependencies": {
+		"jquery": "2.1.1",
+		"lodash": "2.4.1",
+		"requirejs": "2.1.11",
+		"URIjs": "1.13.1",
+		"mousetrap": "1.4.6",
+		"lunr.js": "0.5.2",
+		"fontawesome": "4.1.0"
+	},
+	"styles": {
+		"website": "styles/website.css",
+		"ebook": "styles/ebook.css",
+		"pdf": "styles/pdf.css",
+		"mobi": "styles/mobi.css",
+		"epub": "styles/epub.css"
+	},
+	"plugins": [
+		"anchors","anchor-navigation","atoc","splitter", "tbfed-pagefooter","prism","expandable-chapters"
+	],
+	"pluginsConfig": {
+		"atoc": {
+			"addClass": true,
+			"className": "atoc"
+		},
+		"tbfed-pagefooter": {
+			"copyright": "&copy xunlixing",
+			"modify_label": "该文件修订时间：",
+			"modify_format": "YYYY-MM-DD HH:mm:ss"
+		}
+	}
+
+
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>购物车模块 | 设计邦后端开发文档</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.5">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchor-navigation/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-prism/prism.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../订单模块/index.html" />
+    
+    
+    <link rel="prev" href="../index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1"
+        data-chapter-title="购物车模块"
+        data-filepath="购物车模块/README.md"
+        data-basepath=".."
+        data-revision="Wed Dec 16 2015 16:16:07 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1" data-path="购物车模块/index.html">
+            
+                
+                    <a href="../购物车模块/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        购物车模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="订单模块/index.html">
+            
+                
+                    <a href="../订单模块/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        订单模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="结算模块/index.html">
+            
+                
+                    <a href="../结算模块/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        结算模块
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >设计邦后端开发文档</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x8D2D;&#x7269;&#x8F66;&#x6A21;&#x5757;-cart"><a name="&#x8D2D;&#x7269;&#x8F66;&#x6A21;&#x5757;-cart" class="plugin-anchor" href="#&#x8D2D;&#x7269;&#x8F66;&#x6A21;&#x5757;-cart"><span class="fa fa-link"></span></a>&#x8D2D;&#x7269;&#x8F66;&#x6A21;&#x5757; Cart</h1>
+<h2 id="&#x63D2;&#x5165;&#x8D2D;&#x7269;&#x8F66;"><a name="&#x63D2;&#x5165;&#x8D2D;&#x7269;&#x8F66;" class="plugin-anchor" href="#&#x63D2;&#x5165;&#x8D2D;&#x7269;&#x8F66;"><span class="fa fa-link"></span></a>&#x63D2;&#x5165;&#x8D2D;&#x7269;&#x8F66;</h2>
+<pre><code>/**
+*  userID&#xFF1A;&#x7528;&#x6237;ID
+*  productID&#xFF1A;&#x5546;&#x54C1;ID
+*  designerID&#xFF1A;&#x8BBE;&#x8BA1;&#x5E08;ID
+*  return&#xFF1A;&#x63D2;&#x5165;&#x7ED3;&#x679C;
+*/
+Bool insertProduct(userID,productID,designerID){
+    1. &#x5982;&#x679C;&#x7528;&#x6237;&#x6CA1;&#x6709;&#x8D2D;&#x4E70;&#x6B64;&#x5546;&#x54C1;&#xFF0C;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x5546;&#x54C1;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x6570;&#x91CF;&#x4E3A;1
+    2. &#x5982;&#x679C;&#x7528;&#x6237;&#x5DF2;&#x8D2D;&#x4E70;&#x8FC7;&#x6B64;&#x5546;&#x54C1;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x589E;&#x52A0;&#x6570;&#x91CF;
+}
+</code></pre><h2 id="&#x66F4;&#x6539;&#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;&#x6570;&#x91CF;"><a name="&#x66F4;&#x6539;&#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;&#x6570;&#x91CF;" class="plugin-anchor" href="#&#x66F4;&#x6539;&#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;&#x6570;&#x91CF;"><span class="fa fa-link"></span></a>&#x66F4;&#x6539;&#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;&#x6570;&#x91CF;</h2>
+<pre><code>/**
+*  cartID&#xFF1A;&#x8D2D;&#x7269;&#x8F66;ID
+*  productNum&#xFF1A;&#x8D2D;&#x4E70;&#x5546;&#x54C1;&#x6570;&#x91CF;&#xFF0C;&#x6700;&#x5C0F;&#x4E3A;1,&#x9ED8;&#x8BA4;&#x4E3A;1
+*  return&#xFF1A;
+*/
+Bool updateProduct(cartID,productNum=1)
+</code></pre><h2 id="&#x8D2D;&#x7269;&#x8F66;&#x5217;&#x8868;"><a name="&#x8D2D;&#x7269;&#x8F66;&#x5217;&#x8868;" class="plugin-anchor" href="#&#x8D2D;&#x7269;&#x8F66;&#x5217;&#x8868;"><span class="fa fa-link"></span></a>&#x8D2D;&#x7269;&#x8F66;&#x5217;&#x8868;</h2>
+<pre><code>/**
+*  userID&#xFF1A;&#x8D2D;&#x7269;&#x8F66;&#x5217;&#x8868;
+*  return&#xFF1A;List&#x89C1;&#x4E0B;&#x9762;
+*/
+List products(userID)
+</code></pre><p>List&#x8BE6;&#x7EC6;&#xFF1A;<code>[{&#x8BBE;&#x8BA1;&#x5E08;,&#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;&#x5217;&#x8868;}]</code></p>
+<pre><code class="lang-json"><span class="hljs-comment">//&#x8BBE;&#x8BA1;&#x5E08;</span>
+{
+    &#x8BBE;&#x8BA1;&#x5E08;ID
+    &#x6635;&#x79F0;
+}
+
+<span class="hljs-comment">//&#x5546;&#x54C1;&#x5217;&#x8868;</span>
+[{
+    &#x8D2D;&#x7269;&#x8F66;ID
+    &#x5546;&#x54C1;ID
+    &#x5546;&#x54C1;&#x540D;&#x79F0;
+    &#x5546;&#x54C1;&#x5355;&#x4EF7;
+    &#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;&#x6570;&#x91CF;
+    &#x5546;&#x54C1;&#x72B6;&#x6001;
+    &#x5546;&#x54C1;&#x5E93;&#x5B58;
+}]
+</code></pre>
+<h2 id="&#x5220;&#x9664;&#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;"><a name="&#x5220;&#x9664;&#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;" class="plugin-anchor" href="#&#x5220;&#x9664;&#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;"><span class="fa fa-link"></span></a>&#x5220;&#x9664;&#x8D2D;&#x7269;&#x8F66;&#x5546;&#x54C1;</h2>
+<pre><code>/**
+*  cartID&#xFF1A;&#x8D2D;&#x7269;&#x8F66;ID
+*  return&#xFF1A;
+*/
+Bool deleteProduct(cartID)
+</code></pre><script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl&&targetUl.getElementsByTagName('a').length>0){targetUl.className='atoc';}</script> 
+
+<footer class="page-footer"><span class="copyright">&#xA9; Syousoft Team all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2015-12-15 14:56:21
+</span></footer><div id='anchors-navbar'><i class='fa fa-anchor'></i><ul><li><a href='#购物车模块-cart'>购物车模块 Cart</a></li><ul><li><a href='#插入购物车'>插入购物车</a></li><li><a href='#更改购物车商品数量'>更改购物车商品数量</a></li><li><a href='#购物车列表'>购物车列表</a></li><li><a href='#删除购物车商品'>删除购物车商品</a></li></ul></ul></div><a href='#购物车模块-cart' id='goTop'><i class='fa fa-arrow-up'></i></a>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: 说明"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../订单模块/index.html" class="navigation navigation-next " aria-label="Next page: 订单模块"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"atoc":{"addClass":true,"className":"atoc"},"tbfed-pagefooter":{"copyright":"&copy Syousoft Team","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"anchors":{},"anchor-navigation":{},"splitter":{},"prism":{},"expandable-chapters":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
