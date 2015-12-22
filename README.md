@@ -52,6 +52,11 @@ Namespaces are one honking great idea – let’s do more of those!
 ```
 
 
+**参考:**
+
+- [老齐python基础教程](https://github.com/qiwsir/StarterLearningPython/blob/master/index.md)
+- [廖雪峰Python 2.7教程](http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/)
+- [小明明](http://www.dongwm.com/)
 
 
 
